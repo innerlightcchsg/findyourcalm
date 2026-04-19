@@ -112,30 +112,40 @@
   <body>
     <h1>InnerLight</h1>
     <p>-Find Your Calm-</p>
-    <button class="btn" onclick="openPopup()">Learn About Our Scents</button>
+    <button class="btn" onclick="openPopup('scents-popup')">Learn About Our Scents</button>
+    <button class="btn" onclick="openPopup('where-popup')">Where Can You Find Our Products</button>
 
     <!-- Overlay -->
-    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    <div class="overlay" id="overlay" onclick="closeAllPopups()"></div>
 
-    <!-- Popup -->
-    <div class="popup" id="popup">
+    <!-- Scents Popup -->
+    <div class="popup" id="scents-popup">
       <h2>Our Scents</h2>
       <p><strong>Lavender</strong> – A calming scent known for its relaxing properties. It helps reduce stress and anxiety, making it great for unwinding after a long day.</p>
       <p><strong>Rose</strong> – A floral fragrance that promotes comfort. It is often associated with easing low mood and encouraging calmness and self-love.</p>
       <p><strong>Clary Sage</strong> – A herbal scent that helps clear your mind and reduce feelings of overwhelm. It is especially useful during times of pressure.</p>
       <p><strong>Green Apple</strong> – A fresh, crisp fragrance that feels uplifting and energising. It can help improve focus and boost mood, making it very useful for studying.</p>
       <p><strong>Jasmine</strong> – A gentle, sweet floral scent that promotes relaxation and emotional wellbeing. It reduces stress and creates a peaceful atmosphere.</p>
-      <button class="close-btn" onclick="closePopup()">Close</button>
+      <button class="close-btn" onclick="closeAllPopups()">Close</button>
+    </div>
+
+    <!-- Where to Find Us Popup -->
+    <div class="popup" id="where-popup">
+      <h2>Where to Find Us</h2>
+      <p>InnerLight products can be purchased online through our Etsy store, making them easily accessible to customers. They will also be available at local events in Colchester, where customers can see the products in person. In addition, our products can be viewed through posters and on our website, allowing customers to explore and learn more about our brand.</p>
+      <button class="close-btn" onclick="closeAllPopups()">Close</button>
     </div>
 
     <script>
-      function openPopup() {
-        document.getElementById('popup').style.display = 'block';
+      function openPopup(id) {
+        closeAllPopups();
+        document.getElementById(id).style.display = 'block';
         document.getElementById('overlay').style.display = 'block';
       }
 
-      function closePopup() {
-        document.getElementById('popup').style.display = 'none';
+      function closeAllPopups() {
+        document.getElementById('scents-popup').style.display = 'none';
+        document.getElementById('where-popup').style.display = 'none';
         document.getElementById('overlay').style.display = 'none';
       }
     </script>
