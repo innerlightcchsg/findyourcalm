@@ -9,19 +9,29 @@
         padding: 0;
         min-height: 100vh;
       }
+      .title-block {
+        padding-top: 60px;
+        text-align: center;
+      }
       h1 {
         color: #5a3825;
         text-align: center;
-        margin-top: 80px;
-        font-size: 64px;
+        margin: 0;
+        font-size: clamp(60px, 13vw, 180px);
         text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+        letter-spacing: 0.18em;
+        white-space: nowrap;
+        width: 100%;
+        display: block;
       }
       p.subtitle {
         color: #7a5040;
         text-align: center;
-        font-size: 32px;
+        font-size: clamp(18px, 3.5vw, 52px);
         text-shadow: none;
-        margin-top: 0;
+        margin: 4px auto 0;
+        letter-spacing: 0.12em;
+        width: fit-content;
       }
       .btn-container {
         display: flex;
@@ -186,8 +196,10 @@
     </style>
   </head>
   <body>
-    <h1>InnerLight</h1>
-    <p class="subtitle">-Find Your Calm-</p>
+    <div class="title-block">
+      <h1>InnerLight</h1>
+      <p class="subtitle">- Find Your Calm -</p>
+    </div>
 
     <div class="btn-container">
       <button class="btn btn-scents" onclick="openPopup('scents-popup')">
