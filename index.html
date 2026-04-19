@@ -100,6 +100,33 @@
         z-index: 1;
         text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
       }
+      .btn-about {
+        background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=80');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.2s ease;
+      }
+      .btn-about::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(10, 30, 60, 0.58);
+        border-radius: 28px;
+        transition: background 0.3s ease;
+      }
+      .btn-about:hover::before {
+        background: rgba(10, 30, 60, 0.38);
+      }
+      .btn-about:hover {
+        transform: scale(1.05);
+      }
+      .btn-about span {
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+      }
       .overlay {
         display: none;
         position: fixed;
@@ -171,7 +198,9 @@
     <button class="btn btn-where" onclick="openPopup('where-popup')">
       <span>Where Can You Find Our Products</span>
     </button>
-    <button class="btn btn-plain" onclick="openPopup('about-popup')">About Us</button>
+    <button class="btn btn-about" onclick="openPopup('about-popup')">
+      <span>About Us</span>
+    </button>
 
     <div class="overlay" id="overlay" onclick="closeAllPopups()"></div>
 
