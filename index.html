@@ -25,21 +25,54 @@
       .btn {
         display: block;
         margin: 30px auto;
-        padding: 14px 30px;
-        background-color: rgba(255, 255, 255, 0.2);
+        padding: 22px 70px;
         color: white;
-        font-size: 18px;
+        font-size: 22px;
         border: 2px solid white;
         border-radius: 30px;
         cursor: pointer;
+        width: 80%;
+        max-width: 500px;
+        text-align: center;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+      }
+      .btn-plain {
+        background-color: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(5px);
         transition: background-color 0.3s ease, transform 0.2s ease;
       }
-      .btn:hover {
+      .btn-plain:hover {
         background-color: rgba(255, 255, 255, 0.4);
         transform: scale(1.05);
       }
-
+      .btn-scents {
+        background-image: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?w=900&q=80');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.2s ease;
+      }
+      .btn-scents::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(40, 20, 70, 0.58);
+        border-radius: 28px;
+        transition: background 0.3s ease;
+      }
+      .btn-scents:hover::before {
+        background: rgba(40, 20, 70, 0.38);
+      }
+      .btn-scents:hover {
+        transform: scale(1.05);
+      }
+      .btn-scents span {
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+      }
       .overlay {
         display: none;
         position: fixed;
@@ -48,7 +81,6 @@
         background-color: rgba(0, 0, 0, 0.6);
         z-index: 999;
       }
-
       .popup {
         position: fixed;
         top: 50%; left: 50%;
@@ -66,7 +98,6 @@
         color: white;
         text-align: left;
       }
-
       .popup h2 {
         text-align: center;
         margin-top: 0;
@@ -74,7 +105,6 @@
         font-size: 26px;
         text-shadow: 1px 1px 3px black;
       }
-
       .popup p {
         text-align: left;
         font-size: 15px;
@@ -83,11 +113,9 @@
         text-shadow: none;
         color: white;
       }
-
       .popup p strong {
         font-size: 16px;
       }
-
       .close-btn {
         display: block;
         margin: 20px auto 0;
@@ -101,7 +129,6 @@
         backdrop-filter: blur(5px);
         transition: background-color 0.3s ease;
       }
-
       .close-btn:hover {
         background-color: rgba(255, 255, 255, 0.4);
       }
@@ -110,14 +137,15 @@
   <body>
     <h1>InnerLight</h1>
     <p>-Find Your Calm-</p>
-    <button class="btn" onclick="openPopup('scents-popup')">Learn About Our Scents</button>
-    <button class="btn" onclick="openPopup('where-popup')">Where Can You Find Our Products</button>
-    <button class="btn" onclick="openPopup('about-popup')">About Us</button>
 
-    <!-- Overlay -->
+    <button class="btn btn-scents" onclick="openPopup('scents-popup')">
+      <span>Learn About Our Scents</span>
+    </button>
+    <button class="btn btn-plain" onclick="openPopup('where-popup')">Where Can You Find Our Products</button>
+    <button class="btn btn-plain" onclick="openPopup('about-popup')">About Us</button>
+
     <div class="overlay" id="overlay" onclick="closeAllPopups()"></div>
 
-    <!-- Scents Popup -->
     <div class="popup" id="scents-popup">
       <h2>Our Scents</h2>
       <p><strong>Lavender</strong> – A calming scent known for its relaxing properties. It helps reduce stress and anxiety, making it great for unwinding after a long day.</p>
@@ -128,14 +156,12 @@
       <button class="close-btn" onclick="closeAllPopups()">Close</button>
     </div>
 
-    <!-- Where to Find Us Popup -->
     <div class="popup" id="where-popup">
       <h2>Where to Find Us</h2>
       <p>InnerLight products can be purchased online through our Etsy store, making them easily accessible to customers. They will also be available at local events in Colchester, where customers can see the products in person. In addition, our products can be viewed through posters and on our website, allowing customers to explore and learn more about our brand.</p>
       <button class="close-btn" onclick="closeAllPopups()">Close</button>
     </div>
 
-    <!-- About Us Popup -->
     <div class="popup" id="about-popup">
       <h2>About Us</h2>
       <p>InnerLight is a self-care brand created to support teenage mental wellbeing. Our purpose is to provide calming, aesthetic products that help young people relax and manage everyday stress. We are committed to making a positive impact by donating a portion of our profits to YoungMinds, supporting those facing mental health challenges. Through our products and mission, InnerLight aims to create a sense of comfort, awareness, and meaningful change.</p>
@@ -148,7 +174,6 @@
         document.getElementById(id).style.display = 'block';
         document.getElementById('overlay').style.display = 'block';
       }
-
       function closeAllPopups() {
         document.getElementById('scents-popup').style.display = 'none';
         document.getElementById('where-popup').style.display = 'none';
