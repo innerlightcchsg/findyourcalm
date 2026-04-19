@@ -40,7 +40,6 @@
         transform: scale(1.05);
       }
 
-      /* Overlay background */
       .overlay {
         display: none;
         position: fixed;
@@ -50,7 +49,6 @@
         z-index: 999;
       }
 
-      /* Popup box */
       .popup {
         position: fixed;
         top: 50%; left: 50%;
@@ -114,6 +112,7 @@
     <p>-Find Your Calm-</p>
     <button class="btn" onclick="openPopup('scents-popup')">Learn About Our Scents</button>
     <button class="btn" onclick="openPopup('where-popup')">Where Can You Find Our Products</button>
+    <button class="btn" onclick="openPopup('about-popup')">About Us</button>
 
     <!-- Overlay -->
     <div class="overlay" id="overlay" onclick="closeAllPopups()"></div>
@@ -136,6 +135,13 @@
       <button class="close-btn" onclick="closeAllPopups()">Close</button>
     </div>
 
+    <!-- About Us Popup -->
+    <div class="popup" id="about-popup">
+      <h2>About Us</h2>
+      <p>InnerLight is a self-care brand created to support teenage mental wellbeing. Our purpose is to provide calming, aesthetic products that help young people relax and manage everyday stress. We are committed to making a positive impact by donating a portion of our profits to YoungMinds, supporting those facing mental health challenges. Through our products and mission, InnerLight aims to create a sense of comfort, awareness, and meaningful change.</p>
+      <button class="close-btn" onclick="closeAllPopups()">Close</button>
+    </div>
+
     <script>
       function openPopup(id) {
         closeAllPopups();
@@ -146,6 +152,7 @@
       function closeAllPopups() {
         document.getElementById('scents-popup').style.display = 'none';
         document.getElementById('where-popup').style.display = 'none';
+        document.getElementById('about-popup').style.display = 'none';
         document.getElementById('overlay').style.display = 'none';
       }
     </script>
