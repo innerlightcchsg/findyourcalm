@@ -73,6 +73,33 @@
         z-index: 1;
         text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
       }
+      .btn-where {
+        background-image: url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=900&q=80');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.2s ease;
+      }
+      .btn-where::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(10, 40, 30, 0.58);
+        border-radius: 28px;
+        transition: background 0.3s ease;
+      }
+      .btn-where:hover::before {
+        background: rgba(10, 40, 30, 0.38);
+      }
+      .btn-where:hover {
+        transform: scale(1.05);
+      }
+      .btn-where span {
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+      }
       .overlay {
         display: none;
         position: fixed;
@@ -141,7 +168,9 @@
     <button class="btn btn-scents" onclick="openPopup('scents-popup')">
       <span>Learn About Our Scents</span>
     </button>
-    <button class="btn btn-plain" onclick="openPopup('where-popup')">Where Can You Find Our Products</button>
+    <button class="btn btn-where" onclick="openPopup('where-popup')">
+      <span>Where Can You Find Our Products</span>
+    </button>
     <button class="btn btn-plain" onclick="openPopup('about-popup')">About Us</button>
 
     <div class="overlay" id="overlay" onclick="closeAllPopups()"></div>
