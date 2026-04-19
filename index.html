@@ -39,11 +39,105 @@
         background-color: rgba(255, 255, 255, 0.4);
         transform: scale(1.05);
       }
+
+      /* Overlay background */
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 999;
+      }
+
+      /* Popup box */
+      .popup {
+        position: fixed;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 16px;
+        padding: 40px;
+        width: 90%;
+        max-width: 500px;
+        max-height: 80vh;
+        overflow-y: auto;
+        z-index: 1000;
+        color: white;
+        text-align: left;
+      }
+
+      .popup h2 {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 26px;
+        text-shadow: 1px 1px 3px black;
+      }
+
+      .popup p {
+        text-align: left;
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 14px;
+        text-shadow: none;
+        color: white;
+      }
+
+      .popup p strong {
+        font-size: 16px;
+      }
+
+      .close-btn {
+        display: block;
+        margin: 20px auto 0;
+        padding: 10px 24px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 15px;
+        border: 2px solid white;
+        border-radius: 30px;
+        cursor: pointer;
+        backdrop-filter: blur(5px);
+        transition: background-color 0.3s ease;
+      }
+
+      .close-btn:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
     </style>
   </head>
   <body>
     <h1>InnerLight</h1>
     <p>-Find Your Calm-</p>
-    <button class="btn">Learn About Our Scents</button>
+    <button class="btn" onclick="openPopup()">Learn About Our Scents</button>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+    <!-- Popup -->
+    <div class="popup" id="popup">
+      <h2>Our Scents</h2>
+      <p><strong>Lavender</strong> – A calming scent known for its relaxing properties. It helps reduce stress and anxiety, making it great for unwinding after a long day.</p>
+      <p><strong>Rose</strong> – A floral fragrance that promotes comfort. It is often associated with easing low mood and encouraging calmness and self-love.</p>
+      <p><strong>Clary Sage</strong> – A herbal scent that helps clear your mind and reduce feelings of overwhelm. It is especially useful during times of pressure.</p>
+      <p><strong>Green Apple</strong> – A fresh, crisp fragrance that feels uplifting and energising. It can help improve focus and boost mood, making it very useful for studying.</p>
+      <p><strong>Jasmine</strong> – A gentle, sweet floral scent that promotes relaxation and emotional wellbeing. It reduces stress and creates a peaceful atmosphere.</p>
+      <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+      function openPopup() {
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+      }
+
+      function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+      }
+    </script>
   </body>
 </html>
