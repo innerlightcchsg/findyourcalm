@@ -4,47 +4,44 @@
     <title>Innerlight-findyourcalm</title>
     <style>
       body {
-        background-image: url('background.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-color: #FDEBD0;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
       }
       h1 {
-        color: white;
+        color: #5a3825;
         text-align: center;
-        margin-top: 100px;
-        text-shadow: 2px 2px 4px black;
+        margin-top: 80px;
+        font-size: 64px;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
       }
-      p {
-        color: white;
+      p.subtitle {
+        color: #7a5040;
         text-align: center;
-        font-size: 20px;
-        text-shadow: 1px 1px 3px black;
+        font-size: 32px;
+        text-shadow: none;
+        margin-top: 0;
+      }
+      .btn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 80px;
+        margin-top: 50px;
+        gap: 24px;
       }
       .btn {
-        display: block;
-        margin: 30px auto;
-        padding: 22px 70px;
+        padding: 28px 30px;
         color: white;
-        font-size: 22px;
+        font-size: 18px;
         border: 2px solid white;
         border-radius: 30px;
         cursor: pointer;
-        width: 80%;
-        max-width: 500px;
+        width: 260px;
         text-align: center;
         font-weight: 500;
         letter-spacing: 0.3px;
-      }
-      .btn-plain {
-        background-color: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(5px);
-        transition: background-color 0.3s ease, transform 0.2s ease;
-      }
-      .btn-plain:hover {
-        background-color: rgba(255, 255, 255, 0.4);
-        transform: scale(1.05);
       }
       .btn-scents {
         background-image: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?w=900&q=80');
@@ -139,9 +136,9 @@
         position: fixed;
         top: 50%; left: 50%;
         transform: translate(-50%, -50%);
-        background-color: rgba(255, 255, 255, 0.15);
+        background-color: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(0, 0, 0, 0.15);
         border-radius: 16px;
         padding: 40px;
         width: 90%;
@@ -149,7 +146,7 @@
         max-height: 80vh;
         overflow-y: auto;
         z-index: 1000;
-        color: white;
+        color: #3a2015;
         text-align: left;
       }
       .popup h2 {
@@ -157,7 +154,8 @@
         margin-top: 0;
         margin-bottom: 20px;
         font-size: 26px;
-        text-shadow: 1px 1px 3px black;
+        color: #5a3825;
+        text-shadow: none;
       }
       .popup p {
         text-align: left;
@@ -165,7 +163,7 @@
         line-height: 1.7;
         margin-bottom: 14px;
         text-shadow: none;
-        color: white;
+        color: #3a2015;
       }
       .popup p strong {
         font-size: 16px;
@@ -174,33 +172,34 @@
         display: block;
         margin: 20px auto 0;
         padding: 10px 24px;
-        background-color: rgba(255, 255, 255, 0.2);
-        color: white;
+        background-color: rgba(90, 56, 37, 0.15);
+        color: #5a3825;
         font-size: 15px;
-        border: 2px solid white;
+        border: 2px solid #5a3825;
         border-radius: 30px;
         cursor: pointer;
-        backdrop-filter: blur(5px);
         transition: background-color 0.3s ease;
       }
       .close-btn:hover {
-        background-color: rgba(255, 255, 255, 0.4);
+        background-color: rgba(90, 56, 37, 0.3);
       }
     </style>
   </head>
   <body>
     <h1>InnerLight</h1>
-    <p>-Find Your Calm-</p>
+    <p class="subtitle">-Find Your Calm-</p>
 
-    <button class="btn btn-scents" onclick="openPopup('scents-popup')">
-      <span>Learn About Our Scents</span>
-    </button>
-    <button class="btn btn-where" onclick="openPopup('where-popup')">
-      <span>Where Can You Find Our Products</span>
-    </button>
-    <button class="btn btn-about" onclick="openPopup('about-popup')">
-      <span>About Us</span>
-    </button>
+    <div class="btn-container">
+      <button class="btn btn-scents" onclick="openPopup('scents-popup')">
+        <span>Learn About Our Scents</span>
+      </button>
+      <button class="btn btn-where" onclick="openPopup('where-popup')">
+        <span>Where Can You Find Our Products</span>
+      </button>
+      <button class="btn btn-about" onclick="openPopup('about-popup')">
+        <span>About Us</span>
+      </button>
+    </div>
 
     <div class="overlay" id="overlay" onclick="closeAllPopups()"></div>
 
