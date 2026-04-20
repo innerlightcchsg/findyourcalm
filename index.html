@@ -215,7 +215,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 28px;
       }
       .team-member img {
         width: 100%;
@@ -238,6 +238,11 @@
         color: #3a2015;
         margin: 0;
         line-height: 1.8;
+      }
+      .team-divider {
+        border: none;
+        border-top: 1px solid rgba(90, 56, 37, 0.2);
+        margin: 4px 0 28px 0;
       }
       .close-btn {
         display: block;
@@ -306,6 +311,12 @@
       <div class="team-member">
         <img src="NavyaMTT.jpg" alt="Navya Soni" />
         <p class="member-name">Navya Soni, 12 years old</p>
+        <p class="member-details">- In Year 8<br>- Co-founder of InnerLight</p>
+      </div>
+      <hr class="team-divider" />
+      <div class="team-member">
+        <img src="MahithaMTT.jpg" alt="Mahitha Somasundaram Revat" />
+        <p class="member-name">Mahitha Somasundaram Revat, 13 years old</p>
         <p class="member-details">- In Year 8<br>- Co-founder of InnerLight</p>
       </div>
       <button class="close-btn" onclick="closeAllPopups()">Close</button>
