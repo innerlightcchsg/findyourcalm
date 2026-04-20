@@ -222,14 +222,22 @@
         max-width: 300px;
         border-radius: 12px;
         object-fit: cover;
-        margin-bottom: 10px;
+        margin-bottom: 14px;
         border: 2px solid rgba(90, 56, 37, 0.2);
       }
-      .team-member p {
+      .team-member .member-name {
         text-align: center;
-        margin: 0;
+        font-size: 17px;
+        font-weight: 600;
+        color: #5a3825;
+        margin: 0 0 8px 0;
+      }
+      .team-member .member-details {
+        text-align: center;
         font-size: 15px;
         color: #3a2015;
+        margin: 0;
+        line-height: 1.8;
       }
       .close-btn {
         display: block;
@@ -296,8 +304,9 @@
     <div class="popup" id="team-popup">
       <h2>Meet The Team</h2>
       <div class="team-member">
-        <img src="NavyaMTT.jpg" alt="Team member photo" />
-        <p>Add a name or role here</p>
+        <img src="NavyaMTT.jpg" alt="Navya Soni" />
+        <p class="member-name">Navya Soni, 12 years old</p>
+        <p class="member-details">- In Year 8<br>- Co-founder of InnerLight</p>
       </div>
       <button class="close-btn" onclick="closeAllPopups()">Close</button>
     </div>
